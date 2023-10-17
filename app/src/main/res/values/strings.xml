@@ -30,4 +30,5 @@
     <string name="calc_btn_8">8</string>
     <string name="calc_btn_9">9</string>
     <string name="calc_div_zero_message">Cannot divide by zero</string>
+    <string name="calc_invalid_input" />
 </resources>
