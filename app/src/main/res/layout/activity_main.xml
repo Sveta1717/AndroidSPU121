@@ -8,65 +8,58 @@
     tools:context=".MainActivity">
 
     <!--tools: - для дизайну, не переноситься у код -->
-
-
-    <TextView
-        android:id="@+id/main_tv_hello"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.535"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.25"
-        tools:text="Ласкаво просимо!"
-        android:textSize="24sp"/>
+        app:layout_constraintVertical_bias="0.401">
+
+        <TextView
+            android:id="@+id/main_tv_hello"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="20dp"
+            android:textSize="24sp"
+            tools:text="@string/main_tv_hello_text" />
 
 
-    <TextView
-        android:id="@+id/main_description"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:text="Hello Android!!!"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/main_tv_hello"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.65" />
+        <TextView
+            android:id="@+id/main_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="20dp"
+            android:layout_centerHorizontal="true"
+            android:text="@string/main_description"
+            android:textSize="16sp" />
 
-    <TextView
-        android:id="@+id/current_time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/open_activity_button"
-        android:layout_centerHorizontal="true"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/main_button_hello"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/main_tv_hello" />
+        <TextView
+            android:id="@+id/current_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/open_activity_button"
+            android:layout_marginVertical="20dp"
+            android:layout_centerHorizontal="true"
+            android:textSize="20sp" />
 
-    <Button
-        android:id="@+id/main_button_hello"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="96dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/main_tv_hello" />
+        <Button
+            android:id="@+id/main_button_hello"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="20dp"
+            android:text="@string/main_button_calc" />
 
-    <Button
-        android:id="@+id/open_activity_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:text="Перейти на інший екран"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/main_button_hello" />
-
+        <Button
+            android:id="@+id/open_activity_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginVertical="20dp"
+            android:text="@string/main_button_game" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

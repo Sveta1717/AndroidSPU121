@@ -24,10 +24,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         // View - пробатько всіх UI елементів
         tvHello = findViewById( R.id.main_tv_hello );
-        tvHello.setText( R.string.main_tv_hello_text );
+       // tvHello.setText( R.string.main_tv_hello_text );
 
         Button btnHello = findViewById( R.id.main_button_hello );
         btnHello.setOnClickListener( this::helloClick );
+
+        findViewById( R.id.open_activity_button).setOnClickListener(this::startGame);
 
         // Отримуємо посилання на TextView
         currentTimeTextView = findViewById(R.id.current_time);
@@ -49,6 +51,10 @@ public class MainActivity extends AppCompatActivity {
         Intent calcIntent = new Intent( this.getApplicationContext(), CalcActivity.class );
         startActivity( calcIntent );
     }
+    private void startGame( View view) {
+        startActivity( new Intent( this.getApplicationContext(), GameActivity.class ) );
+    }
+
     // Метод для оновлення поточного часу
     private void updateCurrentTime() {
         SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss", Locale.getDefault());

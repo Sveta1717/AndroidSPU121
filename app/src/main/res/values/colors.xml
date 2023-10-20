@@ -2,11 +2,47 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="calc_layout_background">#202020</color>
-    <color name="calc_text">#FEFEFE</color>
-    <color name="calc_expression_text">#929292</color>
+
+    <!-- 2048 -->
+    <color name="game_title_background">#E2C05D</color>
+    <color name="game_title_foreground">#F9F5F2</color>
+    <color name="game_btn_background">#EF583A</color>
+    <color name="game_btn_foreground">#F6F5ED</color>
+    <color name="game_score_background">#302C28</color>
+    <color name="game_score_foreground">#F4EFEF</color>
+
+    <color name="game_field_background">#BCA18C</color>
+    <color name="game_cell_foreground_0">#DAC5B1</color>
+    <color name="game_cell_background_0">#B3A08E</color>
+    <color name="game_cell_foreground_2">#796D66</color>
+    <color name="game_cell_background_2">#EFE3DB</color>
+    <color name="game_cell_foreground_4">#70635E</color>
+    <color name="game_cell_background_4">#EDE0CE</color>
+    <color name="game_cell_foreground_8">#F3F2ED</color>
+    <color name="game_cell_background_8">#F4B17F</color>
+    <color name="game_cell_foreground_16">#F9F6F2</color>
+    <color name="game_cell_background_16">#F4976C</color>
+    <color name="game_cell_foreground_32">#F9F5F5</color>
+    <color name="game_cell_background_32">#F87D69</color>
+    <color name="game_cell_foreground_64">#F9F5F2</color>
+    <color name="game_cell_background_64">#F85F48</color>
+    <color name="game_cell_foreground_128">#F3F2ED</color>
+    <color name="game_cell_background_128">#EBCC71</color>
+    <color name="game_cell_foreground_256">#F3F2ED</color>
+    <color name="game_cell_background_256">#ECCB61</color>
+    <color name="game_cell_foreground_512">#F3F2ED</color>
+    <color name="game_cell_background_512">#EBC750</color>
+    <color name="game_cell_foreground_1024">#F3F2ED</color>
+    <color name="game_cell_background_1024">#EEC43F</color>
+    <color name="game_cell_foreground_2048">#F3F2ED</color>
+    <color name="game_cell_background_2048">#E9B727</color>
+
+    <!-- Calculator -->
+    <color name="calc_layout_background">#171717</color>
+    <color name="calc_text">#F8F5F5</color>
+    <color name="calc_expression_text">#979494</color>
     <color name="calc_btn_func">#323232</color>
     <color name="calc_btn_digit">#3B3B3B</color>
-    <color name="calc_btn_equal">#4CC1FE</color>
-    <color name="calc_btn_equal_text">#215570</color>
+    <color name="calc_btn_equal">#48B9F4</color>
+    <color name="calc_btn_equal_text">#1D5370</color>
 </resources>
