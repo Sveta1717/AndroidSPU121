@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         btnHello.setOnClickListener( this::helloClick );
 
         findViewById( R.id.open_activity_button).setOnClickListener(this::startGame);
+        findViewById( R.id.main_button_chat).setOnClickListener(this::startChat);
 
         // Отримуємо посилання на TextView
         currentTimeTextView = findViewById(R.id.current_time);
@@ -54,10 +55,14 @@ public class MainActivity extends AppCompatActivity {
     private void startGame( View view) {
         startActivity( new Intent( this.getApplicationContext(), GameActivity.class ) );
     }
+    private void startChat( View view) {
+        startActivity( new Intent( this.getApplicationContext(), ChatActivity.class ) );
+    }
+
 
     // Метод для оновлення поточного часу
     private void updateCurrentTime() {
-        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss", Locale.getDefault());
+        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss", Locale.UK);
         String currentTime = sdf.format(new Date());
         currentTimeTextView.setText(currentTime);
     }

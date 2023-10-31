@@ -3,6 +3,12 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
+    <!-- Chat -->
+    <color name="chat_msg_mine_background">#E8D6A0</color>
+    <color name="chat_msg_mine_border">#62ECD0</color>
+    <color name="chat_msg_other_background">#98F1EE</color>
+    <color name="chat_msg_other_border">#ECC962</color>
+
     <!-- 2048 -->
     <color name="game_title_background">#E2C05D</color>
     <color name="game_title_foreground">#F9F5F2</color>
@@ -13,7 +19,7 @@
 
     <color name="game_field_background">#BCA18C</color>
     <color name="game_cell_foreground_0">#DAC5B1</color>
-    <color name="game_cell_background_0">#B3A08E</color>
+    <color name="game_cell_background_0">#DAC5B1</color>
     <color name="game_cell_foreground_2">#796D66</color>
     <color name="game_cell_background_2">#EFE3DB</color>
     <color name="game_cell_foreground_4">#70635E</color>
