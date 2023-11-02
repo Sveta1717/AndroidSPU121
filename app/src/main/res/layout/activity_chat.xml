@@ -53,10 +53,13 @@
             android:layout_weight="1"
             android:src="@android:drawable/ic_menu_save" />
 
-        <Space
+
+        <ImageButton
+            android:id="@+id/chat_btn_bell"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1.5" />
+            android:layout_weight="1"
+            android:src="@android:drawable/ic_popup_reminder" />
     </LinearLayout>
 
     <ScrollView
@@ -98,6 +101,4 @@
             android:layout_height="wrap_content"
             android:src="@android:drawable/ic_menu_send"/>
     </LinearLayout>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

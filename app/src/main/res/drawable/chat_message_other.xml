@@ -2,7 +2,7 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="rectangle">
     <solid
-        android:color="@color/calc_btn_equal_text"/>
+        android:color="@color/chat_msg_other_background"/>
     <stroke
         android:color="@color/chat_msg_mine_background"
         android:width="2dp"/>

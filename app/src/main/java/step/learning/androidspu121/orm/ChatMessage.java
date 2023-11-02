@@ -7,6 +7,8 @@ import java.text.ParseException;
 import java.util.Date;
 import java.util.Locale;
 
+import step.learning.androidspu121.R;
+
 public class ChatMessage {
     private String id;
     private String author;
@@ -25,6 +27,7 @@ public class ChatMessage {
             return null;
         }
     }
+
 
     public String getAuthor() {
         return author;
@@ -56,6 +59,16 @@ public class ChatMessage {
 
     public void setText(String text) {
         this.text = text;
+    }
+
+    private boolean isMine; // моі повідомлення
+
+    public boolean isMine() {
+        return isMine;
+    }
+
+    public void setMine(boolean mine) {
+        isMine = mine;
     }
 }
 

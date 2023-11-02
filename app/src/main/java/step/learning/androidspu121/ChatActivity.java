@@ -3,16 +3,18 @@ package step.learning.androidspu121;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.content.res.AppCompatResources;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
-import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
-
 import com.google.gson.Gson;
 
 import java.io.ByteArrayOutputStream;
@@ -36,11 +38,35 @@ public class ChatActivity extends AppCompatActivity {
     private EditText etMessage ;
     private ScrollView svContainer ;
     private LinearLayout llContainer ;
+    private Animation bellSellAnimation ;
+    private MediaPlayer bellSound ;
 
     @Override
     protected void onCreate( Bundle savedInstanceState ) {
         super.onCreate( savedInstanceState ) ;
         setContentView( R.layout.activity_chat ) ;
+
+        bellSound = MediaPlayer.create(
+                ChatActivity.this,
+                R.raw.kolokolchik
+        ) ;
+        bellSellAnimation = AnimationUtils.loadAnimation(
+                ChatActivity.this,
+                R.anim.chat_bell_cell
+        ) ;
+        bellSellAnimation.reset() ;ImageButton chatBtnBell = findViewById(R.id.chat_btn_bell) ;
+        ImageButton chatBtnSend = findViewById(R.id.chat_btn_send) ;
+
+        chatBtnSend.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               // анімація
+                chatBtnBell.startAnimation(bellSellAnimation) ;
+                bellSound.start() ;
+            }
+        });
+
+
         new Thread( this::loadChatMessages ).start() ;
         etNik = findViewById( R.id.chat_et_nik ) ;
         etMessage = findViewById( R.id.chat_et_message ) ;
@@ -67,6 +93,13 @@ public class ChatActivity extends AppCompatActivity {
                     chatMessages.add( chatMessage ) ;
                     wasNewMessage = true ;
                 }
+                if (chatMessage.getAuthor().equals(etNik)) {
+                    chatMessage.setMine(true);
+                } else {
+                    chatMessage.setMine(false);
+                }
+                chatMessages.add(chatMessage);
+                wasNewMessage = true;
             }
             if( wasNewMessage ) {
                 runOnUiThread( this::showChatMessages ) ;
@@ -105,8 +138,8 @@ public class ChatActivity extends AppCompatActivity {
         // "other"
         // layoutParams.gravity = Gravity.START ;
         // "mine"
-        layoutParams.gravity = Gravity.END ;
-
+        //layoutParams.gravity = Gravity.END ;
+        layoutParams.gravity = (chatMessage.isMine() ? Gravity.END : Gravity.START);
         /*  margin
                ---messageLayout {
                        textView{ Author }
@@ -122,12 +155,23 @@ public class ChatActivity extends AppCompatActivity {
         //         AppCompatResources.getDrawable(
         //                 ChatActivity.this,
         //                 R.drawable.chat_message_other ) ) ;
-        // "mine"
-        messageLayout.setBackground(
-                AppCompatResources.getDrawable(
-                        ChatActivity.this,
-                        R.drawable.chat_message_mine ) ) ;
-
+        //"mine"
+        //messageLayout.setBackground(
+        //        AppCompatResources.getDrawable(
+        //                ChatActivity.this,
+        //                R.drawable.chat_message_mine ) ) ;
+        if (chatMessage.isMine()) {
+            messageLayout.setBackground(
+                    AppCompatResources.getDrawable(
+                            ChatActivity.this,
+                            R.drawable.chat_message_mine));
+        } else {
+            messageLayout.setBackground(
+                    AppCompatResources.getDrawable(
+                            ChatActivity.this,
+                            R.drawable.chat_message_other));
+        }
+//
         TextView textView = new TextView( this ) ;
         textView.setText( chatMessage.getAuthor() ) ;
         messageLayout.addView( textView ) ;
