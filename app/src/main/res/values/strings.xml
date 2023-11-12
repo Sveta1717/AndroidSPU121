@@ -10,6 +10,8 @@
     <string name="chat_tv_title">Комунікатор</string>
     <string name="chat_tv_nik">Нік у чаті:</string>
     <string name="chat_et_nik">Sveta</string>
+    <string name="chat_tv_send">Відправити повідомлення</string>
+    <string name="emoji_image">\uD83D\uDE00</string>
 
     <!--  2048  -->
     <string name="game_tv_title">2048</string>

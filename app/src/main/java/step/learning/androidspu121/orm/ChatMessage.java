@@ -2,6 +2,7 @@ package step.learning.androidspu121.orm;
 
 import android.icu.text.SimpleDateFormat;
 import android.util.Log;
+import android.view.View;
 
 import java.text.ParseException;
 import java.util.Date;
@@ -15,8 +16,12 @@ public class ChatMessage {
     private String text;
     private String moment;
 
+    transient private View view;
+
     private  static  final SimpleDateFormat momentFormat =
         new SimpleDateFormat("yyyy-MM-dd hh:mm:ss", Locale.UK);
+    private  static  final SimpleDateFormat outputFormat =
+            new SimpleDateFormat("dd.MM.yyyy HH:mm:ss", Locale.UK);
     public Date getMomentAsDate() {
         try {
             return  momentFormat.parse(this.getMoment());
@@ -28,6 +33,23 @@ public class ChatMessage {
         }
     }
 
+    public String getFormattedMoment() {
+        try {
+            Date date = momentFormat.parse(this.getMoment());
+            return outputFormat.format(date);
+        } catch (ParseException ex) {
+            Log.e("ChatMessage::getFormattedMoment", "Error formatting date: " + ex.getMessage());
+            return this.getMoment();
+        }
+    }
+
+    public View getView() {
+        return view;
+    }
+
+    public void setView(View view) {
+        this.view = view;
+    }
 
     public String getAuthor() {
         return author;

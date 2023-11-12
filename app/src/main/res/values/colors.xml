@@ -4,9 +4,12 @@
     <color name="white">#FFFFFFFF</color>
 
     <!-- Chat -->
-    <color name="chat_msg_mine_background">#E2C05D</color>
+    <color name="chat_msg_mine_background">#E8E6E1</color>
     <color name="chat_msg_mine_border">#62ECD0</color>
     <color name="chat_msg_other_background">#98F1EE</color>
+    <color name="chat_msg_fill_background">#F4DDF8</color>
+    <color name="chat_msg_all_background">#E099EC</color>
+    <color name="chat_msg_send_background">#F1E8F3</color>
     <color name="chat_msg_other_border">#ECC962</color>
 
     <!-- 2048 -->

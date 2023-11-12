@@ -31,7 +31,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/chat_tv_title"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="0.0"
+        android:background="@color/chat_msg_all_background">
 
         <TextView
             android:layout_width="0dp"
@@ -44,10 +45,10 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:text="@string/chat_et_nik" />
+            tools:text="@string/chat_et_nik" />
 
         <ImageButton
-            android:id="@+id/imageButton"
+            android:id="@+id/chat_btn_save_nik"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -71,7 +72,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="0.0"
+        android:background="@color/chat_msg_fill_background">
         <LinearLayout
             android:id="@+id/chat_ll_container"
             android:layout_width="match_parent"
@@ -88,17 +90,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/chat_sv_container"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="0.0"
+        android:background="@color/chat_msg_send_background">
         <EditText
             android:id="@+id/chat_et_message"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:text="Вітання!"/>
+            android:text="Вітаю!"/>
         <ImageButton
             android:id="@+id/chat_btn_send"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@android:drawable/ic_menu_send"/>
+            android:src="@android:drawable/ic_menu_send"
+            android:tooltipText="@string/chat_tv_send"/>
+
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
